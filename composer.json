@@ -1,0 +1,21 @@
+{
+  "name": "rintoexa/atomictime",
+  "description": "Rinto Exandi Atomic Time",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Rinto Exandi",
+      "email": "rinto@sinaga.or.id"
+    }
+  ],
+    "minimum-stability": "dev",
+    "require": {
+        "nesbot/carbon": "^2.46"
+    },
+    "autoload": {
+        "psr-4": {
+          "RintoExandi\\AtomicTime\\": "src/"
+        }
+    }
+}
