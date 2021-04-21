@@ -1,0 +1,14 @@
+version: '3.2'
+
+services:
+  atomictimecontainer:
+    image: atomictime_atomictime
+    restart: always
+    container_name: atomictime-web
+    ports:
+      - "127.0.0.1:23000:80"
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer/cache:/root/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/app
