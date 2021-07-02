@@ -2,7 +2,7 @@ version: '3.2'
 
 services:
   atomictimecontainer:
-    image: atomictime_atomictime
+    image: rintoexsinaga/atomictime
     restart: always
     container_name: atomictime-web
     ports:

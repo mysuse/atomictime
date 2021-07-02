@@ -26,7 +26,6 @@ class Application{
     }
 
 
-
     protected function apiTimeStamp(){
 
         $timeObj = [

@@ -4,7 +4,7 @@ services:
 
   atomictime:
     build: ./
-    container_name: atomictime-web
+    container_name: rintoexa-atomictime
     ports:
       - "127.0.0.1:23000:80"
     volumes:

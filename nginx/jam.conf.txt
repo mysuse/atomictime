@@ -1,0 +1,33 @@
+upstream jam.sibolgakota.go.id  {
+   ip_hash;
+   server 127.0.0.1:23000;
+  }
+ 
+  server {
+	server_name jam.sibolgakota.go.id;
+
+       listen 443 ssl; # managed by Certbot
+       ssl_certificate /etc/letsencrypt/live/simpeg-devel.sibolgakota.go.id/fullchain.pem; # managed by Certbot
+       ssl_certificate_key /etc/letsencrypt/live/simpeg-devel.sibolgakota.go.id/privkey.pem; # managed by Certbot
+       include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+       ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+        access_log /var/log/nginx/jam.access;
+        error_log  /var/log/nginx/jam.error error;
+   
+     location / {
+      proxy_pass http://jam.sibolgakota.go.id;
+      }
+
+}
+
+server {
+
+    server_name jam.sibolgakota.go.id;
+
+    listen 80; 
+
+    return 301 https://$server_name$request_uri;
+}
+
+    # Other default configurations ommitted for brevity
