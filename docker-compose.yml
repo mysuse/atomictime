@@ -12,36 +12,39 @@ services:
       - ~/.composer/cache:/root/.composer/cache:delegated
       # Mount source-code for development
       - ./:/app
-    atomictime1:
-      image: rintoexsinaga/atomictime
-      restart: always
-      container_name: atomictime-web1
-      ports:
-        - "127.0.0.1:23001:80"
-      volumes:
-        # Re-use local composer cache via host-volume
-        - ~/.composer/cache:/root/.composer/cache:delegated
-        # Mount source-code for development
-        - ./:/app
-    atomictime2:
-      image: rintoexsinaga/atomictime
-      restart: always
-      container_name: atomictime-web2
-      ports:
-        - "127.0.0.1:23002:80"
-      volumes:
-        # Re-use local composer cache via host-volume
-        - ~/.composer/cache:/root/.composer/cache:delegated
-        # Mount source-code for development
-        - ./:/app
-    atomictime3:
-      image: rintoexsinaga/atomictime
-      restart: always
-      container_name: atomictime-web3
-      ports:
-        - "127.0.0.1:23003:80"
-      volumes:
-        # Re-use local composer cache via host-volume
-        - ~/.composer/cache:/root/.composer/cache:delegated
-        # Mount source-code for development
-        - ./:/app
+
+  atomictime1:
+    image: rintoexsinaga/atomictime
+    restart: always
+    container_name: atomictime-web1
+    ports:
+      - "127.0.0.1:23001:80"
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer/cache:/root/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/app
+
+  atomictime2:
+    image: rintoexsinaga/atomictime
+    restart: always
+    container_name: atomictime-web2
+    ports:
+      - "127.0.0.1:23002:80"
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer/cache:/root/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/app
+
+  atomictime3:
+    image: rintoexsinaga/atomictime
+    restart: always
+    container_name: atomictime-web3
+    ports:
+      - "127.0.0.1:23003:80"
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer/cache:/root/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/app
