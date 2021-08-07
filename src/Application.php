@@ -35,6 +35,7 @@ class Application{
             'unixtime'=>time(),
             'gmt'=>'GMT+7',
             'datetime'=>$this->timeapi(),
+            'wib'=>$this->timewib(),
          ];
 
       
@@ -48,6 +49,13 @@ class Application{
         $current =  Carbon::now(new DateTimeZone('Asia/Jakarta'));
 
         return $current->format('Y-m-d H:i:s');
+    }
+
+    protected function timewib(){
+
+        $current =  Carbon::now(new DateTimeZone('Asia/Jakarta'));
+
+        return $current->format('d-M-Y H:i');
     }
 
     protected function getTimeNow(){
